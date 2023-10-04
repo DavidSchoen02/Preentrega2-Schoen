@@ -1,13 +1,11 @@
-import React from "react";
-import { Button } from "react-bootstrap";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Button } from "@mui/material";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
-const CartWidget = () => {
-  return (
-    <Button className="me-3">
-      <AiOutlineShoppingCart /> 0
-    </Button>
-  );
-};
+function CartWidget() {
+
+    return (
+        <Button color="secondary" variant="contained"><ShoppingCartOutlinedIcon fontSize="medium"></ShoppingCartOutlinedIcon></Button>
+    );
+}
 
 export default CartWidget;
