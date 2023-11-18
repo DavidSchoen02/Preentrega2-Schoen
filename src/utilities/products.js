@@ -63,6 +63,9 @@ import HxStomp from '../images/Line 6 HX Stomp.webp';
 import PodGo from '../images/Line 6 POD Go Wireless.webp';
 // --------------------------------------------------------------------------------------------------------
 
+
+
+
 const products = [
 
     {

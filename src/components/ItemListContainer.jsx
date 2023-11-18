@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import products from '../utilities/products';
 import timeOut from '../utilities/timeOut';
@@ -6,6 +5,7 @@ import ItemList from './ItemList';
 import { Grid } from '@mui/material';
 import Cargando from './Cargando';
 import { useParams } from 'react-router-dom';
+import { collection, doc, getDoc, getDocs, getFirestore } from 'firebase/firestore'
 
 const bajos = products.filter(product => product.category === "Basses");
 const guitarras = products.filter(product => product.category === "Guitars");
@@ -16,6 +16,22 @@ const consolas = products.filter(product => product.category === "Consoles");
 const amplificadores = products.filter(product => product.category === "Amplifiers");
 const pedales = products.filter(product => product.category === "Pedals");
 let itemsAMostrar = [];
+
+const Products = () => {
+    const [items, setItems] = useState()
+
+
+
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = collection(db, "Productos")
+        getDocs(itemCollection).then((res) => {
+            setItems(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        })
+    }, [])
+
+}
+
 
 function ItemsListContainer() {
     const [items, setItems] = useState([])

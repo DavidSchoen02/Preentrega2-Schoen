@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Card, CardContent, CardMedia, Typography, Box, Button, Grid } from '@mui/material/';
 import { Link } from 'react-router-dom';
 
-
 function Item({ id, brand, title, price, pictureUrl }) {
 
     return (
